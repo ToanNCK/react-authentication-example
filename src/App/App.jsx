@@ -6,6 +6,7 @@ import { authenticationService } from '@/_services';
 import { PrivateRoute } from '@/_components';
 import { HomePage } from '@/HomePage';
 import { LoginPage } from '@/LoginPage';
+import { ComponentsView } from '@/ComponentsView';
 
 class App extends React.Component {
     constructor(props) {
@@ -34,6 +35,7 @@ class App extends React.Component {
                         <nav className="navbar navbar-expand navbar-dark bg-dark">
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-item nav-link">Home</Link>
+                                <Link to="/components" className="nav-item nav-link">Components View</Link>
                                 <a onClick={this.logout} className="nav-item nav-link">Logout</a>
                             </div>
                         </nav>
@@ -43,6 +45,7 @@ class App extends React.Component {
                             <div className="row">
                                 <div className="col-md-6 offset-md-3">
                                     <PrivateRoute exact path="/" component={HomePage} />
+                                    <PrivateRoute exact path="/components" component={ComponentsView} />
                                     <Route path="/login" component={LoginPage} />
                                 </div>
                             </div>
