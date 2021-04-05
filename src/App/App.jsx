@@ -7,6 +7,7 @@ import { PrivateRoute } from '@/_components';
 import { HomePage } from '@/HomePage';
 import { LoginPage } from '@/LoginPage';
 import { ComponentsView } from '@/ComponentsView';
+import { EasyUi } from '@/EasyUi';
 
 class App extends React.Component {
     constructor(props) {
@@ -36,16 +37,18 @@ class App extends React.Component {
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-item nav-link">Home</Link>
                                 <Link to="/components" className="nav-item nav-link">Components View</Link>
+                                <Link to="/easy-ui" className="nav-item nav-link">Easy Ui</Link>
                                 <a onClick={this.logout} className="nav-item nav-link">Logout</a>
                             </div>
                         </nav>
                     }
-                    <div className="jumbotron">
+                    <div className="jumbotron min-h-80vh">
                         <div className="container">
                             <div className="row">
                                 <div className="col-md-6 offset-md-3">
                                     <PrivateRoute exact path="/" component={HomePage} />
                                     <PrivateRoute exact path="/components" component={ComponentsView} />
+                                    <PrivateRoute exact path="/easy-ui" component={EasyUi} />
                                     <Route path="/login" component={LoginPage} />
                                 </div>
                             </div>

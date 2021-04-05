@@ -13,6 +13,8 @@
         "bootstrap": "^4.6.0",
         "formik": "^1.5.2",
         "history": "^4.9.0",
+        "lodash": "^4.17.21",
+        "rc-easyui": "^1.2.0",
         "react": "^16.8.6",
         "react-bootstrap": "^1.5.2",
         "react-dom": "^16.8.6",
