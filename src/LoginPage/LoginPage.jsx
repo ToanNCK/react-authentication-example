@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik, Field, Form, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
-import { $ } from 'react-jquery-plugin'
+import { $ } from 'react-jquery-plugin';
 
 import { authenticationService } from '@/_services';
 
