@@ -52,8 +52,15 @@ class BasicConcepts extends React.Component {
                 },
                 { 
                     id: 7, 
+                    kn: 'History ', 
+                    dth: 'Todo', 
+                    link:'https://viblo.asia/p/co-ban-ve-history-trong-react-router-vyDZOzwPKwj',
+                    note: 'Cơ bản về history trong React Router' 
+                },
+                { 
+                    id: 8, 
                     kn: 'Css', 
-                    dth: 'Done', 
+                    dth: 'Todo', 
                     link:'https://viblo.asia/p/4-cach-de-style-react-components-OeVKB4w2lkW',
                     note: '4 cách để css' 
                 }

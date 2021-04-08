@@ -5,12 +5,7 @@ import { NavDropdown } from 'react-bootstrap';
 import { history } from '@/_helpers';
 import { authenticationService } from '@/_services';
 import { PrivateRoute } from '@/_components';
-import { HomePage } from '@/HomePage';
-import { LoginPage } from '@/LoginPage';
-import { ComponentsView } from '@/ComponentsView';
-import { EasyUi } from '@/EasyUi';
-import { Charts } from '@/Charts';
-import { BasicConcepts } from '@/View';
+import { BasicConcepts, LoginPage, HomePage, ComponentsView, EasyUi, Charts } from '@/View';
 
 class App extends React.Component {
     constructor(props) {
@@ -36,7 +31,7 @@ class App extends React.Component {
             <Router history={history}>
                 <div>
                     {currentUser &&
-                        <nav className="navbar navbar-expand navbar-dark bg-dark">
+                        <nav className="navbar navbar-expand navbar-dark bg-dark justify-content-center">
                             <div className="navbar-nav">
                                 <Link to="/" className="nav-item nav-link">Home</Link>
                                 <Link to="/components" className="nav-item nav-link">Components View</Link>
