@@ -1,0 +1,7 @@
+@import '../../node_modules/rc-easyui/dist/themes/bootstrap/easyui.css';
+@import '../../node_modules/rc-easyui/dist/themes/icon.css';
+@import '../../node_modules/rc-easyui/dist/themes/react.css';
+
+.min-h-80vh {
+    min-height: 80vh;
+}
