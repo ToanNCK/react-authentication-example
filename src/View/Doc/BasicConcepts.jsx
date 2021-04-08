@@ -1,5 +1,6 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
+// import {file} from './Assets/file/DocReact.xlsx';
 
 class BasicConcepts extends React.Component {
     constructor(props) {
@@ -73,10 +74,6 @@ class BasicConcepts extends React.Component {
         const tbodys = this.state.tbody;
         return (
             <div>
-                <h2>Props</h2>
-                <ul>
-                    <li>Khái niệm : là 1 từ viết ngắn gọn của properties , nhưng lại là 1 khái niệm trong ReactJS. props là 1 đối tượng, nó lưu trữ các giá trị của các attribute (thuộc tính) của một thẻ (Tag).Là cách mà component có thể nhận được các giá trị của thuộc tính truyền vào từ bên ngoài vào, và là cách mà các component có thể nói chuyện với nhau.</li>
-                </ul>
                 <Table striped bordered hover size="sm" className="mt-5">
                     <thead>
                         <tr>
@@ -104,7 +101,7 @@ class BasicConcepts extends React.Component {
                     </tbody>
                 </Table>
 
-                <a href=""></a>
+                <a href='/Assets/file/DocReact.xlsx' download>Click to download excel</a>
             </div>
         )
     }

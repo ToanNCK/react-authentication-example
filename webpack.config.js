@@ -3,24 +3,11 @@ const path = require('path');
 
 module.exports = {
     mode: 'development',
-    resolve: {
-        extensions: ['.js', '.jsx']
-    },
     module: {
-        rules: [
-            {
-                test: /\.jsx?$/,
-                loader: 'babel-loader'
-            },
-            {
-                test: /\.css$/,
-                exclude: /node_modules/,
-                use: [
-                  'style-loader',
-                  'css-loader'
-                ]
-            }
-        ]
+        rules: [{
+            test: /\.jsx?$/,
+            loader: 'babel-loader'
+        }]
     },
     resolve: {
         extensions: ['.js', '.jsx'],
@@ -38,7 +25,7 @@ module.exports = {
         // global app config object
         config: JSON.stringify({
             apiUrl: 'http://localhost:4000'
-            // apiUrl: 'http://localhost:44347'
+                // apiUrl: 'http://localhost:44347'
         })
     }
 }
