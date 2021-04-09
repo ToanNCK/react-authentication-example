@@ -1,12 +1,12 @@
 import React from 'react';
 import { render } from 'react-dom';
-import { App } from './App';
+import { BasicLayout } from './Commons';
 
 // setup fake backend
 import { configureFakeBackend } from './_helpers';
 configureFakeBackend();
 
 render(
-    <App />,
+    <BasicLayout />,
     document.getElementById('app')
 );

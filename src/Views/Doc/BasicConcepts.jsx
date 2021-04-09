@@ -1,6 +1,5 @@
 import React from 'react';
 import { Table } from 'react-bootstrap';
-// import {file} from './Assets/file/DocReact.xlsx';
 
 class BasicConcepts extends React.Component {
     constructor(props) {
@@ -101,7 +100,7 @@ class BasicConcepts extends React.Component {
                     </tbody>
                 </Table>
 
-                <a href='/Assets/file/DocReact.xlsx' download>Click to download excel</a>
+                <a href='/assets/file/DocReact.xlsx' download>Click to download excel</a>
             </div>
         )
     }

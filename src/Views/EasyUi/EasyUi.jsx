@@ -54,7 +54,7 @@ class EasyUi extends React.Component {
                         />
                     </div>
                     <DataGrid
-                        style={{ height: 600, width: 600 }}
+                        style={{ height: 600, width: '100%' }}
                         pagination
                         {...this.state}
                     >
