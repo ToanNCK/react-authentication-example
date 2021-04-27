@@ -3,8 +3,8 @@ import { render } from 'react-dom';
 import { BasicLayout } from './Commons';
 
 // setup fake backend
-import { configureFakeBackend } from './_helpers';
-configureFakeBackend();
+// import { configureFakeBackend } from './_helpers';
+// configureFakeBackend();
 
 render(
     <BasicLayout />,
