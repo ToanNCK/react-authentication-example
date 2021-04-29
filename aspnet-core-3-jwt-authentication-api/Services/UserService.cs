@@ -24,7 +24,8 @@ namespace WebApi.Services
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
         private List<User> _users = new List<User>
         {
-            new User { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" }
+            new User { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
+            new User { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
         };
 
         private readonly AppSettings _appSettings;

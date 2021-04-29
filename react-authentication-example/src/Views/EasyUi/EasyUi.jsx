@@ -24,8 +24,8 @@ class EasyUi extends React.Component {
     getData(total) {
         let data = [];
         for (let i = 1; i <= total; i++) {
-            let amount = Math.floor(Math.random() * 1000);
-            let price = Math.floor(Math.random() * 1000);
+            let amount = Math.floor(Math.random() * total);
+            let price = Math.floor(Math.random() * total);
             data.push({
                 inv: "Inv No " + i,
                 name: "Name " + i,

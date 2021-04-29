@@ -1,9 +1,6 @@
 import React from 'react';
-import { Router, Route, Link, NavLink } from 'react-router-dom';
-import { NavDropdown } from 'react-bootstrap';
-
+import { Router, Route } from 'react-router-dom';
 import { history } from '@/_helpers';
-import { authenticationService } from '@/_services';
 import { PrivateRoute } from '@/_components';
 import { BasicConcepts, LoginPage, HomePage, ComponentsView, EasyUi, Charts, HelloWorld } from '@/Views';
 import { Footer, Navigation } from '@/Commons';
