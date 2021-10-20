@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Alert, Table, Pagination, Button, Modal, Row, Col } from 'react-bootstrap';
+import { Helmet } from 'react-helmet';
+
 
 class ComponentsView extends React.Component {
     constructor(props) {
@@ -25,31 +27,28 @@ class ComponentsView extends React.Component {
         const handleShow = () => this.setState({ showModal: true });
         return (
             <div>
-                {
-                    data &&
+                <Helmet>
+                    <title>Components View</title>
+                </Helmet>
+                {data &&
                     data.map((variant, idx) => (
                         <Alert key={idx} variant={variant}>
                             This is a {variant} alert—check it out!
                         </Alert>
-                    ))
-
-                }
+                    ))}
 
                 <Table striped bordered hover size="sm" className="mt-5">
                     <thead>
                         <tr>
-                            {
-                                theads &&
+                            {theads &&
                                 theads.map(thead => (
                                     <th key={thead}>{thead}</th>
-                                ))
-                            }
+                                ))}
 
                         </tr>
                     </thead>
                     <tbody>
-                        {
-                            tbodys &&
+                        {tbodys &&
                             tbodys.map(tbody => (
                                 <tr key={tbody.id}>
                                     <td>{tbody.id}</td>
@@ -57,8 +56,7 @@ class ComponentsView extends React.Component {
                                     <td>{tbody.lastName}</td>
                                     <td colSpan={tbody.colSpan ? tbody.colSpan : ""}>{tbody.userName}</td>
                                 </tr>
-                            ))
-                        }
+                            ))}
                     </tbody>
                 </Table>
                 <Row>

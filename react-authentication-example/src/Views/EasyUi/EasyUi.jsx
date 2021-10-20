@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { DataGrid, GridColumn, ComboBox, Label } from 'rc-easyui';
 import { Row, Col } from 'react-bootstrap';
 
@@ -41,6 +42,9 @@ class EasyUi extends React.Component {
     render() {
         return (
             <Row>
+                <Helmet>
+                    <title>Easy Ui</title>
+                </Helmet>
                 <Col>
                     <h2>Pagination Layout</h2>
                     <div style={{ marginBottom: 10 }}>

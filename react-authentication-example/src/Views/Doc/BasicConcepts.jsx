@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from "react-helmet";
 import { Table } from 'react-bootstrap';
 
 class BasicConcepts extends React.Component {
@@ -73,6 +74,9 @@ class BasicConcepts extends React.Component {
         const tbodys = this.state.tbody;
         return (
             <div>
+                <Helmet>
+                    <title>Basic Concepts</title>
+                </Helmet>
                 <Table striped bordered hover size="sm" className="mt-5">
                     <thead>
                         <tr>

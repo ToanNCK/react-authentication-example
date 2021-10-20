@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Helmet } from "react-helmet";
 import { userService, authenticationService } from '@/_services';
 
 class HomePage extends React.Component {
@@ -20,7 +20,10 @@ class HomePage extends React.Component {
         const { currentUser, users } = this.state;
         return (
             <div>
-                <h1 className="col-md-12">{currentUser.firstName} {currentUser.lastName}!</h1>
+                <Helmet>
+                    <title>Home</title>
+                </Helmet>
+                <h1>{currentUser.firstName} {currentUser.lastName}!</h1>
                 <p>Bạn đã đăng nhập bằng React & JWT !!</p>
                 <h3>Người dùng:</h3>
                 {users &&

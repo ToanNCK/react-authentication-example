@@ -4,7 +4,7 @@ import { history } from '@/_helpers';
 import { PrivateRoute } from '@/_components';
 import { BasicConcepts, LoginPage, HomePage, ComponentsView, EasyUi, Charts, HelloWorld } from '@/Views';
 import { Footer, Navigation } from '@/Commons';
-
+import { Helmet } from 'react-helmet';
 
 class BasicLayout extends React.Component {
     constructor(props) {
@@ -19,6 +19,14 @@ class BasicLayout extends React.Component {
         return (
             <Router history={history}>
                 <div>
+                    <Helmet>
+                        <link href="../src/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+                        <link href="../src/assets/styles.css" rel="stylesheet" />
+
+                        <script src="../src/assets/bootstrap/js/react.production.min.js"></script>
+                        <script src="../src/assets/bootstrap/js/react-dom.production.min.js"></script>
+                        <script src="../src/assets/bootstrap/js/react-bootstrap.min.js"></script>
+                    </Helmet>
                     <Navigation />
 
                     <div className="jumbotron min-h-80vh">

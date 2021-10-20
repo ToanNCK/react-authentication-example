@@ -1,4 +1,5 @@
 import React from "react";
+import { Helmet } from "react-helmet";
 
 class Charts extends React.Component {
 
@@ -6,6 +7,9 @@ class Charts extends React.Component {
         
         return (
             <div>
+                <Helmet>
+                    <title>Charts</title>
+                </Helmet>
                 <p>Chưa có</p>
             </div>
         );

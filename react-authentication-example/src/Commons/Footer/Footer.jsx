@@ -6,7 +6,7 @@ class Footer extends React.Component {
 
         return (
             <div>
-                <div class="text-center">
+                <div className="text-center">
                     <p>
                         <a href="http://jasonwatmore.com/post/2019/04/06/react-jwt-authentication-tutorial-example" target="_top">React - JWT Authentication Tutorial with Example</a>
                     </p>
