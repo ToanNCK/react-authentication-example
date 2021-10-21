@@ -2,7 +2,7 @@ using System.Text.Json.Serialization;
 
 namespace WebApi.Entities
 {
-    public class User
+    public class User2
     {
         public int Id { get; set; }
         public string FirstName { get; set; }

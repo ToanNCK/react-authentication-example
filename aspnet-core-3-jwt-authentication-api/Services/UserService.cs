@@ -15,17 +15,17 @@ namespace WebApi.Services
     public interface IUserService
     {
         AuthenticateResponse Authenticate(AuthenticateRequest model);
-        IEnumerable<User> GetAll();
-        User GetById(int id);
+        IEnumerable<User2> GetAll();
+        User2 GetById(int id);
     }
 
     public class UserService : IUserService
     {
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User> _users = new List<User>
+        private List<User2> _users = new List<User2>
         {
-            new User { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
-            new User { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
+            new User2 { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
+            new User2 { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
         };
 
         private readonly AppSettings _appSettings;
@@ -48,19 +48,19 @@ namespace WebApi.Services
             return new AuthenticateResponse(user, token);
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<User2> GetAll()
         {
             return _users;
         }
 
-        public User GetById(int id)
+        public User2 GetById(int id)
         {
             return _users.FirstOrDefault(x => x.Id == id);
         }
 
         // helper methods
 
-        private string generateJwtToken(User user)
+        private string generateJwtToken(User2 user)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
