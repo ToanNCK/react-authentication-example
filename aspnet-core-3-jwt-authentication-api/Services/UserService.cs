@@ -6,6 +6,7 @@ using System.IdentityModel.Tokens.Jwt;
 using System.Linq;
 using System.Security.Claims;
 using System.Text;
+using WebApi.Data;
 using WebApi.Entities;
 using WebApi.Helpers;
 using WebApi.Models;
@@ -15,29 +16,31 @@ namespace WebApi.Services
     public interface IUserService
     {
         AuthenticateResponse Authenticate(AuthenticateRequest model);
-        IEnumerable<User2> GetAll();
-        User2 GetById(int id);
+        IEnumerable<User> GetAll();
+        User GetById(int id);
     }
 
     public class UserService : IUserService
     {
         // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        private List<User2> _users = new List<User2>
-        {
-            new User2 { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
-            new User2 { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
-        };
+        //private List<User2> _users = new List<User2>
+        //{
+        //    new User2 { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
+        //    new User2 { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
+        //};
 
+        private readonly ProfileContext _context;
         private readonly AppSettings _appSettings;
 
-        public UserService(IOptions<AppSettings> appSettings)
+        public UserService(IOptions<AppSettings> appSettings, ProfileContext context)
         {
             _appSettings = appSettings.Value;
+             _context = context;
         }
 
         public AuthenticateResponse Authenticate(AuthenticateRequest model)
         {
-            var user = _users.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
+            var user = _context.User.SingleOrDefault(x => x.Username == model.Username && x.Password == model.Password);
 
             // return null if user not found
             if (user == null) return null;
@@ -48,19 +51,19 @@ namespace WebApi.Services
             return new AuthenticateResponse(user, token);
         }
 
-        public IEnumerable<User2> GetAll()
+        public IEnumerable<User> GetAll()
         {
-            return _users;
+            return _context.User;
         }
 
-        public User2 GetById(int id)
+        public User GetById(int id)
         {
-            return _users.FirstOrDefault(x => x.Id == id);
+            return _context.User.FirstOrDefault(x => x.Id == id);
         }
 
         // helper methods
 
-        private string generateJwtToken(User2 user)
+        private string generateJwtToken(User user)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();

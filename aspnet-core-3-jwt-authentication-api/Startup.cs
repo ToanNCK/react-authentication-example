@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.Data;
 using WebApi.Helpers;
 using WebApi.Services;
 
@@ -27,6 +29,8 @@ namespace WebApi
 
             // configure DI for application services
             services.AddScoped<IUserService, UserService>();
+
+            services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProfileContext")));
         }
 
         // configure the HTTP request pipeline
