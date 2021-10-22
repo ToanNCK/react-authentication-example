@@ -1,8 +1,10 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using AutoMapper;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using WebApi.AutoMapper;
 using WebApi.Data;
 using WebApi.Helpers;
 using WebApi.Services;
@@ -31,6 +33,14 @@ namespace WebApi
             services.AddScoped<IUserService, UserService>();
 
             services.AddDbContext<ProfileContext>(options => options.UseSqlServer(Configuration.GetConnectionString("ProfileContext")));
+            // Auto Mapper Configurations
+            var mappingConfig = new MapperConfiguration(mc =>
+            {
+                mc.AddProfile(new AutoMapperProfile());
+            });
+
+            IMapper mapper = mappingConfig.CreateMapper();
+            services.AddSingleton(mapper);
         }
 
         // configure the HTTP request pipeline

@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using WebApi.Models;
+using WebApi.Models.View;
 using WebApi.Services;
 
 namespace WebApi.Controllers
@@ -32,6 +33,13 @@ namespace WebApi.Controllers
         {
             var users = _userService.GetAll();
             return Ok(users);
+        }
+
+        [HttpPost("register")]
+        public IActionResult Register(UserViewModel model)
+        {
+            var response = _userService.Register(model);
+            return BadRequest(new { message = response });
         }
     }
 }

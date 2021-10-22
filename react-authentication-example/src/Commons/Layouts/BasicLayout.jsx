@@ -2,7 +2,7 @@ import React from 'react';
 import { Router, Route } from 'react-router-dom';
 import { history } from '@/_helpers';
 import { PrivateRoute } from '@/_components';
-import { BasicConcepts, LoginPage, HomePage, ComponentsView, EasyUi, Charts, HelloWorld } from '@/Views';
+import { BasicConcepts, LoginPage, HomePage, ComponentsView, EasyUi, Charts, HelloWorld, RegisterPage } from '@/Views';
 import { Footer, Navigation } from '@/Commons';
 import { Helmet } from 'react-helmet';
 
@@ -40,6 +40,7 @@ class BasicLayout extends React.Component {
                                     <PrivateRoute exact path="/basic-concepts" component={BasicConcepts} />
                                     <PrivateRoute exact path="/ex-hello-world" component={HelloWorld} />
                                     <Route path="/login" component={LoginPage} />
+                                    <Route path="/register" component={RegisterPage} />
                                 </div>
                             </div>
                         </div>
