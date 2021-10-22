@@ -22,13 +22,6 @@ namespace WebApi.Services
 
     public class UserService : IUserService
     {
-        // users hardcoded for simplicity, store in a db with hashed passwords in production applications
-        //private List<User2> _users = new List<User2>
-        //{
-        //    new User2 { Id = 1, FirstName = "Nguyễn Công Khánh ", LastName = "Toàn", Username = "admin@gmail.com", Password = "Admin@123" },
-        //    new User2 { Id = 2, FirstName = "Test ", LastName = "thôi mà :)", Username = "test@gmail.com", Password = "Test@123" }
-        //};
-
         private readonly ProfileContext _context;
         private readonly AppSettings _appSettings;
 
@@ -46,7 +39,7 @@ namespace WebApi.Services
             if (user == null) return null;
 
             // authentication successful so generate jwt token
-            var token = generateJwtToken(user);
+            var token = GenerateJwtToken(user);
 
             return new AuthenticateResponse(user, token);
         }
@@ -63,7 +56,7 @@ namespace WebApi.Services
 
         // helper methods
 
-        private string generateJwtToken(User user)
+        private string GenerateJwtToken(User user)
         {
             // generate token that is valid for 7 days
             var tokenHandler = new JwtSecurityTokenHandler();
