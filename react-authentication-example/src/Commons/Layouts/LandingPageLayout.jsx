@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { history } from "@/_helpers";
 import { FooterLandingPage, NavigationLandingPage } from "@/Commons";
 import { IndexLandingPage, DetailLandingPage } from "@/Views";
@@ -58,13 +58,15 @@ class LandingPageLayout extends React.Component {
           <script src={source + "/assets/js/scripts.js"} async></script>
         </Helmet>
         <NavigationLandingPage />
-        <Route path="/landing-page/project" component={DetailLandingPage}>
-          <DetailLandingPage />
-        </Route>
+        <Switch>
+          <Route path="/landing-page/project" component={DetailLandingPage}>
+            <DetailLandingPage />
+          </Route>
 
-        <Route path="/landing-page" exact component={IndexLandingPage}>
-          <IndexLandingPage />
-        </Route>
+          <Route exact path="/landing-page" component={IndexLandingPage}>
+            <IndexLandingPage />
+          </Route>
+        </Switch>
         <FooterLandingPage />
       </Router>
     );

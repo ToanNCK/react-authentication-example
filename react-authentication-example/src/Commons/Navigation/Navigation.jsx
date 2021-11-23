@@ -39,7 +39,7 @@ class Navigation extends React.Component {
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="/basic-concepts">Not single page</NavDropdown.Item>
                                     <NavDropdown.Divider />
-                                    <NavDropdown.Item as={Link} to="/landing-page" target="_blank">Profile me!</NavDropdown.Item>
+                                    <NavDropdown.Item href="/landing-page">Profile me!</NavDropdown.Item>
                                     <NavDropdown.Divider />
                                     <NavDropdown.Item href="/#">Item add...</NavDropdown.Item>
                                 </NavDropdown>

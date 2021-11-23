@@ -1,5 +1,5 @@
 import React from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import { history } from "@/_helpers";
 import { PrivateRoute } from "@/_components";
 import {
@@ -52,31 +52,30 @@ class BasicLayout extends React.Component {
             <div className="container">
               <div className="row">
                 <div className="col-md-8 offset-md-2">
-                  <PrivateRoute exact path="/" component={HomePage} />
-                  <PrivateRoute
-                    exact
-                    path="/components"
-                    component={ComponentsView}
-                  />
-                  <PrivateRoute exact path="/easy-ui" component={EasyUi} />
-                  <PrivateRoute exact path="/charts" component={Charts} />
-                  <PrivateRoute
-                    exact
-                    path="/basic-concepts"
-                    component={BasicConcepts}
-                  />
-                  <PrivateRoute
-                    exact
-                    path="/ex-hello-world"
-                    component={HelloWorld}
-                  />
-                  <Route path="/login" component={LoginPage} />
-                  <Route path="/register" component={RegisterPage} />
+                  <Switch>
+                    <PrivateRoute exact path="/" component={HomePage} />
+                    <PrivateRoute
+                      exact
+                      path="/components"
+                      component={ComponentsView}
+                    />
+                    <PrivateRoute path="/easy-ui" component={EasyUi} />
+                    <PrivateRoute path="/charts" component={Charts} />
+                    <PrivateRoute
+                      path="/basic-concepts"
+                      component={BasicConcepts}
+                    />
+                    <PrivateRoute
+                      path="/ex-hello-world"
+                      component={HelloWorld}
+                    />
+                    <Route path="/login" component={LoginPage} />
+                    <Route path="/register" component={RegisterPage} />
+                  </Switch>
                 </div>
               </div>
             </div>
           </div>
-
           <Footer />
         </div>
       </Router>
