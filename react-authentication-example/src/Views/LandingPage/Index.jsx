@@ -30,6 +30,7 @@ class IndexLandingPage extends React.Component {
   }
 
   render() {
+    let linkDetail = "/landing-page/project";
     return (
       <div>
         {/* Header */}
@@ -234,7 +235,7 @@ class IndexLandingPage extends React.Component {
               <div className="col-lg-12">
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-1.jpg"
@@ -250,7 +251,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-2.jpg"
@@ -266,7 +267,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-3.jpg"
@@ -282,7 +283,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-4.jpg"
@@ -298,7 +299,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-5.jpg"
@@ -314,7 +315,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-6.jpg"
@@ -330,7 +331,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-7.jpg"
@@ -346,7 +347,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-8.jpg"
@@ -362,7 +363,7 @@ class IndexLandingPage extends React.Component {
 
                 <div className="card">
                   <div className="card-image">
-                    <Link to="/landing-page-project">
+                    <Link to={linkDetail}>
                       <img
                         className="img-fluid"
                         src="../src/assets/images/project-9.jpg"

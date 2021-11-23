@@ -15,6 +15,7 @@ class LandingPageLayout extends React.Component {
   }
 
   render() {
+    var source = "../src";
     return (
       <Router history={history}>
         <Helmet>
@@ -37,28 +38,31 @@ class LandingPageLayout extends React.Component {
             href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&family=Poppins:wght@600&display=swap"
             rel="stylesheet"
           />
-          <link href="../src/assets/css/bootstrap.css" rel="stylesheet" />
-          <link href="../src/assets/css/fontawesome-all.css" rel="stylesheet" />
+          <link href={source + "/assets/css/bootstrap.css"} rel="stylesheet" />
           <link
-            href="../src/assets/css/styles-landingpage.css"
+            href={source + "/assets/css/fontawesome-all.css"}
             rel="stylesheet"
           />
-          <link href="../src/assets/styles.css" rel="stylesheet" />
-          <link rel="icon" href="../src/assets/images/favicon.png" />
+          <link
+            href={source + "/assets/css/styles-landingpage.css"}
+            rel="stylesheet"
+          />
+          <link href={source + "/assets/styles.css"} rel="stylesheet" />
+          <link rel="icon" href={source + "/assets/images/favicon.png"} />
 
-          <script src="../src/assets/js/jquery.min.js"></script>
-          <script src="../src/assets/js/bootstrap.min.js"></script>
-          <script src="../src/assets/js/jquery.easing.min.js"></script>
-          {/* <script src="../src/assets/js/morphext.min.js" async></script>
-          <script src="../src/assets/js/cus.morphext.js" async></script> */}
-          <script src="../src/assets/js/scripts.js" async></script>
+          <script src={source + "/assets/js/jquery.min.js"}></script>
+          <script src={source + "/assets/js/bootstrap.min.js"}></script>
+          <script src={source + "/assets/js/jquery.easing.min.js"}></script>
+          {/* <script src="source/assets/js/morphext.min.js" async></script>
+          <script src="source/assets/js/cus.morphext.js" async></script> */}
+          <script src={source + "/assets/js/scripts.js"} async></script>
         </Helmet>
         <NavigationLandingPage />
-        <Route path="/landing-page-project/:path?" exact>
+        <Route path="/landing-page/project" component={DetailLandingPage}>
           <DetailLandingPage />
         </Route>
 
-        <Route path="/landing-page/:path?" exact>
+        <Route path="/landing-page" exact component={IndexLandingPage}>
           <IndexLandingPage />
         </Route>
         <FooterLandingPage />

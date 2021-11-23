@@ -4,7 +4,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 -->
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <_PublishTargetUrl>E:\ReactNative\react-authentication-example\aspnet-core-3-jwt-authentication-api\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
-    <History>True|2021-04-29T07:44:08.5960691Z;True|2021-04-29T14:30:13.1425059+07:00;</History>
+    <_PublishTargetUrl>E:\DemoLamViec\ReactNative\react-authentication-example\aspnet-core-3-jwt-authentication-api\bin\Release\netcoreapp3.1\publish\</_PublishTargetUrl>
+    <History>True|2021-11-23T08:00:01.5518752Z;True|2021-04-29T14:44:08.5960691+07:00;True|2021-04-29T14:30:13.1425059+07:00;</History>
   </PropertyGroup>
 </Project>

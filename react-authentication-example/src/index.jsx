@@ -11,7 +11,7 @@ import { LandingPageLayout } from './Commons';
 render(
     <Router>
         <Switch>
-            <Route path='/landing-page/:path?' exact>
+            <Route path='/landing-page:path?' exact>
                 <LandingPageLayout />
             </Route>
 
